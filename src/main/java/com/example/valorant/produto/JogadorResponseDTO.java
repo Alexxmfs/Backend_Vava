@@ -1,0 +1,7 @@
+package com.example.valorant.produto;
+
+public record JogadorResponseDTO(Long id, String username, String tag, String playtime, String matches, String rating, String level, String loses, String damage_round, String headshot, String win, String wins, String kills, String deaths, String assists, String kad_ratio, String kills_round, String clutches, String top_agents_1, String top_hours_agent_1, String top_matches_agent_1, String top_win_agent_1, String top_kd_agent_1, String top_weapon_1, String top_weapon_headshot_1, String top_weapon_2, String top_weapon_headshot_2, String top_maps_1, String top_porcentagem_map_win_1) {
+    public JogadorResponseDTO(Jogador jogador){
+        this(jogador.getId(), jogador.getUsername(), jogador.getTag(), jogador.getPlaytime(), jogador.getMatches(),  jogador.getRating(), jogador.getLevel(), jogador.getLoses(), jogador.getDamage_round(), jogador.getHeadshot(), jogador.getWin(), jogador.getWins(), jogador.getKills(), jogador.getDeaths(), jogador.getAssists(), jogador.getKad_ratio(), jogador.getKills_round(), jogador.getClutches(), jogador.getTop_agents_1(), jogador.getTop_hours_agent_1(), jogador.getTop_matches_agent_1(), jogador.getTop_win_agent_1(), jogador.getTop_kd_agent_1(), jogador.getTop_weapon_1(), jogador.getTop_weapon_headshot_1(), jogador.getTop_weapon_2(), jogador.getTop_weapon_headshot_2(), jogador.getTop_maps_1(), jogador.getTop_porcentagem_map_win_1());
+    }
+}
