@@ -1,4 +1,4 @@
-package com.example.valorant.produto;
+package com.example.valorant.jogador;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -17,18 +17,18 @@ public class Jogador {
     private Long id;
     private String username;
     private String tag;
-    private String playtime;
-    private String matches;
+    private double playtime;
+    private double matches;
     private String rating;
     private String level;
     private String loses;
     private String damage_round;
     private String headshot;
     private String win;
-    private String wins;
-    private String kills;
-    private String deaths;
-    private String assists;
+    private double wins;
+    private double kills;
+    private double deaths;
+    private double assists;
     private String kad_ratio;
     private String kills_round;
     private String clutches;
@@ -79,9 +79,9 @@ public class Jogador {
 
     public void setTag(String tag) {this.tag = tag;}
 
-    public void setPlaytime(String playtime) {this.playtime = playtime;}
+    public void setPlaytime(double playtime) {this.playtime = playtime;}
 
-    public void setMatches(String matches) {this.matches = matches;}
+    public void setMatches(double matches) {this.matches = matches;}
 
     public void setRating(String rating) {this.rating = rating;}
 
@@ -95,13 +95,13 @@ public class Jogador {
 
     public void setWin(String win) {this.win = win;}
 
-    public void setWins(String wins) {this.wins = wins;}
+    public void setWins(double wins) {this.wins = wins;}
 
-    public void setKills(String kills) {this.kills = kills;}
+    public void setKills(double kills) {this.kills = kills;}
 
-    public void setDeaths(String deaths) {this.deaths = deaths;}
+    public void setDeaths(double deaths) {this.deaths = deaths;}
 
-    public void setAssists(String assists) {this.assists = assists;}
+    public void setAssists(double assists) {this.assists = assists;}
 
     public void setKad_ratio(String kad_ratio) {this.kad_ratio = kad_ratio;}
 
