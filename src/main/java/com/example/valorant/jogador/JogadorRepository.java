@@ -18,4 +18,13 @@ public interface JogadorRepository extends JpaRepository<Jogador, Long> {
             "FROM " +
             "    jogadores", nativeQuery = true)
     List<Object[]> findWinPercentage();
+
+    @Query(value = "SELECT\n" +
+            "    username,\n" +
+            "    kills,\n" +
+            "    ROUND((kills / (SELECT SUM(kills) FROM jogadores)) * 100, 2) AS kill_percentage\n" +
+            "FROM\n" +
+            "    jogadores;", nativeQuery = true)
+    List<Object[]> porcenKillJogador();
+
 }

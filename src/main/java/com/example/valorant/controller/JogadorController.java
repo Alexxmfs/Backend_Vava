@@ -25,8 +25,24 @@ public class JogadorController {
         for (Object[] result : results) {
             Map<String, Object> playerData = new LinkedHashMap<>();
             playerData.put("username", (String) result[0]); // Nome do jogador
-            playerData.put("matches", ((BigDecimal) result[1]).intValue()); // Número de partidas
+            playerData.put("matches", ((BigDecimal) result[1])); // Número de partidas
             playerData.put("winPercentage", (BigDecimal) result[2]); // Percentual de vitórias
+            formattedResults.add(playerData);
+        }
+
+        return formattedResults;
+    }
+
+    @GetMapping("/porcen-kill-jogador")
+    public List<Map<String, Object>> porcenKillJogador() {
+        List<Object[]> results = repository.porcenKillJogador();
+        List<Map<String, Object>> formattedResults = new ArrayList<>();
+
+        for (Object[] result : results) {
+            Map<String, Object> playerData = new LinkedHashMap<>();
+            playerData.put("username", (String) result[0]); // Nome do jogador
+            playerData.put("kills", ((BigDecimal) result[1])); // Número de partidas
+            playerData.put("kills_percentage", (BigDecimal) result[2]); // Percentual de vitórias
             formattedResults.add(playerData);
         }
 
