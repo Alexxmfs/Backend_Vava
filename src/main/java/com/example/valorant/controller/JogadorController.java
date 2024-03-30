@@ -49,6 +49,23 @@ public class JogadorController {
         return formattedResults;
     }
 
+
+    @GetMapping("/jogadorHeadshotAcima30")
+    public List<Map<String, Object>> jogadorHeadshotAcima30() {
+        List<Object[]> results = repository.jogadorHeadshotAcima30();
+        List<Map<String, Object>> formattedResults = new ArrayList<>();
+
+        for (Object[] result : results) {
+            Map<String, Object> playerData = new LinkedHashMap<>();
+            playerData.put("username", (String) result[0]); // Nome do jogador
+            playerData.put("kills", ((BigDecimal) result[1])); // Número de partidas
+            playerData.put("headshot", (String) result[2]); // Percentual de vitórias
+            formattedResults.add(playerData);
+        }
+
+        return formattedResults;
+    }
+
     @CrossOrigin(origins = "*", allowedHeaders = "*")
     @PostMapping
     public void saveJogador(@RequestBody JogadorRequestDTO data){

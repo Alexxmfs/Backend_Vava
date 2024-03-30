@@ -27,4 +27,13 @@ public interface JogadorRepository extends JpaRepository<Jogador, Long> {
             "    jogadores;", nativeQuery = true)
     List<Object[]> porcenKillJogador();
 
+    @Query(value = "SELECT\n" +
+            "    username,\n" +
+            "    kills,\n" +
+            "    headshot\n" +
+            "FROM\n" +
+            "    jogadores\n" +
+            "WHERE\n" +
+            "    CAST(REPLACE(headshot, '%', '') AS NUMERIC) > 30; ", nativeQuery = true)
+    List<Object[]> jogadorHeadshotAcima30();
 }
