@@ -7,8 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
-import java.util.Optional;
+import java.math.BigDecimal;
+import java.util.*;
 
 @RestController
 @RequestMapping("jogador")
@@ -18,8 +18,19 @@ public class JogadorController {
     private JogadorRepository repository;
 
     @GetMapping("/porcen-vitoria")
-    public List<Object[]> findWinPercentage() {
-        return repository.findWinPercentage();
+    public List<Map<String, Object>> findWinPercentage() {
+        List<Object[]> results = repository.findWinPercentage();
+        List<Map<String, Object>> formattedResults = new ArrayList<>();
+
+        for (Object[] result : results) {
+            Map<String, Object> playerData = new LinkedHashMap<>();
+            playerData.put("username", (String) result[0]); // Nome do jogador
+            playerData.put("matches", ((BigDecimal) result[1]).intValue()); // Número de partidas
+            playerData.put("winPercentage", (BigDecimal) result[2]); // Percentual de vitórias
+            formattedResults.add(playerData);
+        }
+
+        return formattedResults;
     }
 
     @CrossOrigin(origins = "*", allowedHeaders = "*")
