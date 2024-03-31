@@ -26,29 +26,29 @@ public class JogadorController {
             Map<String, Object> playerData = new LinkedHashMap<>();
             playerData.put("username", (String) result[0]); // Nome do jogador
             playerData.put("matches", ((BigDecimal) result[1])); // Número de partidas
-            playerData.put("winPercentage", (BigDecimal) result[2]); // Percentual de vitórias
+            playerData.put("winPercentage", (String) result[2]);
             formattedResults.add(playerData);
         }
 
         return formattedResults;
     }
 
-    @GetMapping("/porcen-kill-jogador")
-    public List<Map<String, Object>> porcenKillJogador() {
-        List<Object[]> results = repository.porcenKillJogador();
+    @GetMapping("/porcenVitAgent")
+    public List<Map<String, Object>> porcenVitAgent() {
+        List<Object[]> results = repository.porcenVitAgent();
         List<Map<String, Object>> formattedResults = new ArrayList<>();
 
         for (Object[] result : results) {
             Map<String, Object> playerData = new LinkedHashMap<>();
             playerData.put("username", (String) result[0]); // Nome do jogador
-            playerData.put("kills", ((BigDecimal) result[1])); // Número de partidas
-            playerData.put("kills_percentage", (BigDecimal) result[2]); // Percentual de vitórias
+            playerData.put("Top Agente 1", (String) result[1]);
+            playerData.put("Top Matches Agente 1", (String) result[2]);
+            playerData.put("Top Win Agente 1", (String) result[3]);
             formattedResults.add(playerData);
         }
 
         return formattedResults;
     }
-
 
     @GetMapping("/jogadorHeadshotAcima30")
     public List<Map<String, Object>> jogadorHeadshotAcima30() {
@@ -60,6 +60,20 @@ public class JogadorController {
             playerData.put("username", (String) result[0]); // Nome do jogador
             playerData.put("kills", ((BigDecimal) result[1])); // Número de partidas
             playerData.put("headshot", (String) result[2]); // Percentual de vitórias
+            formattedResults.add(playerData);
+        }
+
+        return formattedResults;
+    }
+
+    @GetMapping("total-jogadores")
+    public List<Map<String, Object>> totalJogador() {
+        List<Object[]> results = repository.totalJogador();
+        List<Map<String, Object>> formattedResults = new ArrayList<>();
+
+        for (Object[] result : results) {
+            Map<String, Object> playerData = new LinkedHashMap<>();
+            playerData.put("Total Jogadores ", ((Number) result[0]).longValue()); // Cast to Long
             formattedResults.add(playerData);
         }
 
