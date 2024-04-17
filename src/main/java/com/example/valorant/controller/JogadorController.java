@@ -81,7 +81,7 @@ public class JogadorController {
     }
 
     @CrossOrigin(origins = "*", allowedHeaders = "*")
-    @PostMapping
+    @PostMapping("criar-jogador")
     public void saveJogador(@RequestBody JogadorRequestDTO data){
         Jogador jogadorData = new Jogador(data);
         repository.save(jogadorData);
