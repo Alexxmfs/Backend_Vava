@@ -1,33 +1,48 @@
-<h1>Valorant Tracker - Backend</h1>
+# Projeto Interdisciplinar III - Sistemas de Informação ESPM
 
-<img src="https://pbs.twimg.com/media/EZNT-QKWkAAd0LM?format=jpg&name=large" width="950" height="500" />
-
-<p align="center">
-  <a href="#pre-requisites">Pré-requisitos</a> •
-  <a href="#how-to-use">Instalando o projeto</a> •
-  <a href="#related">Frontend</a> •
-  <a href="#license">Licença</a>
+<p style="text-align: center;">
+    <a href="https://www.espm.br/cursos-de-graduacao/sistemas-de-informacao/"><img src="https://avatars.githubusercontent.com/u/49880458?s=200&v=4" alt="Sistemas de Informação ESPM" style="height: 200px; width: 200px;"/></a>
 </p>
 
-Essa aplicação foi desenvolvido durante o video [Construindo aplicação Fullstack do ZERO](https://youtu.be/lUVureR5GqI?si=d-fHBagSO6bjX58G) utilizando **Java Spring e Spring MVC** para criação do servidor, **Spring Data JPA** para manipulação e persistência de dados, **Lombok** para geração de boilerplates e Postgres Driver para realizar a conexão com banco de dados Postgress.
+### 2024-03
 
-<h2 id="pre-requisites">💻 Requisitos</h2> 
+## Integrantes
+- [Alex Macedo](https://github.com/Alexxmfs)
+- [Débora Duarte](https://github.com/duartedebis)
+- [Henrique Sardella](https://github.com/henrique-sdc)
+- [Thiago Alonso](https://github.com/ThiagoAlonso05)
+- [Rafa Ambrosio](https://github.com/rafaambrosio)
 
-Para rodar esse projeto você precisa ter o Java instalado na sua máquina.
+# Valorant Player Data API
 
-<h2 id="how-to-use"> 🚀 Instalando o projeto</h2>
+Esta é a API do projeto de backend para processamento dos dados de jogadores do jogo Valorant, obtidos através do scraper implementado em Python.
 
-Primeiro você deve clonar o repositório,
+## Instalação
+
+1. Certifique-se de ter o Python e o pip instalados em sua máquina. Você pode baixá-los [aqui](https://www.python.org/downloads/).
+2. Clone ou baixe este repositório em sua máquina local.
+
+## Configuração
+
+1. No terminal, navegue até o diretório do projeto.
+2. Execute os comandos:
 
 ```bash
-# Clone o repositório
-$ git clone https://github.com/Alexxmfs/Backend_Vava.git
-
-# Acesse-o
-$ cd Backend_Vava
+mvn clean package
+mvn boot-strap:run
 ```
 
-<h2 id="related">📝 Licença</h2>
+## Banco de Dados
 
-Este projeto está licenciado sob a licença MIT. Consulte o arquivo `LICENSE` para obter mais informações.
+O projeto utiliza um banco de dados PostgreSQL. Certifique-se de ter um servidor PostgreSQL em execução.
 
+## Licença
+
+Este projeto é licenciado sob a [MIT License](https://github.com/tech-espm/inter-2sem-2023-eventos/blob/main/LICENSE).
+
+<h2><b>Tecnologias Utilizadas</b></h2>
+
+  <div style="display: inline_block"><br>
+  <img align="center" alt="java" height="60" width="60" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg" hspace="10">
+  <img align="center" alt="docker" height="60" width="60" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original-wordmark.svg" hspace="10">
+  </div>
