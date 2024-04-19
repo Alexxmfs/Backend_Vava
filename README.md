@@ -19,10 +19,10 @@ Primeiro você deve clonar o repositório,
 
 ```bash
 # Clone o repositório
-$ git clone https://github.com/fernandakipper/crud-java-back
+$ git clone https://github.com/Alexxmfs/Backend_Vava.git
 
 # Acesse-o
-$ cd crud-java-back
+$ cd Backend_Vava
 ```
 
 Agora, dentro do IntelliJ, vamos instalar as depedências com o Maven
@@ -45,13 +45,4 @@ Para realizar a integração com o Frontend, você pode clonar o projeto e rodar
 <h2 id="related">📝 Licença</h2>
 
 Este projeto está licenciado sob a licença MIT. Consulte o arquivo `LICENSE` para obter mais informações.
-
-
-## 📱 Minhas Redes
-
-Meu site: [fernandakipper.com](https://www.fernandakipper.com) &nbsp;&middot;&nbsp; 
-
-Instagram: [@kipper.dev](https://github.com/kipper.devb) &nbsp;&middot;&nbsp;
-
-YouTube [@kipperdev](https://www.youtube.com/@kipperdev) &nbsp;&middot;&nbsp;
 
