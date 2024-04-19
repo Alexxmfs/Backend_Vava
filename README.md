@@ -1,5 +1,7 @@
 <h1>Valorant Tracker - Backend</h1>
 
+<img src="https://pbs.twimg.com/media/EZNT-QKWkAAd0LM?format=jpg&name=large" width="950" height="500" />
+
 <p align="center">
   <a href="#pre-requisites">Pré-requisitos</a> •
   <a href="#how-to-use">Instalando o projeto</a> •
@@ -24,23 +26,6 @@ $ git clone https://github.com/Alexxmfs/Backend_Vava.git
 # Acesse-o
 $ cd Backend_Vava
 ```
-
-Agora, dentro do IntelliJ, vamos instalar as depedências com o Maven
-
-<img width="300px" src="./.github/instalar-deps.png">
-
-E por fim, entre no arquivo da classe `CardapioApllication` para executar o projeto
-
-<img width="300px" src="./.github/executar.png">
-
-<h2 id="related">🫂 Integração com Frontend</h2>
-
-Para realizar a integração com o Frontend, você pode clonar o projeto e rodar localmente, ou desenvolver você mesmo seguindo o tutorial no Youtube.
-
-👉 [EM BREVE: Desenvolvendo o Frontend com React e Typescript](https://www.youtube.com/@kipperdev)
-
-👉 [Link do repositório](https://github.com/Fernanda-Kipper/frontend-cardapio-digital)
-
 
 <h2 id="related">📝 Licença</h2>
 
