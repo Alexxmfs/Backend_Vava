@@ -1,4 +1,4 @@
-<h1>Cardápio Digital - Backend</h1>
+<h1>Valorant Tracker - Backend</h1>
 
 <p align="center">
   <a href="#pre-requisites">Pré-requisitos</a> •
