@@ -24,4 +24,7 @@ public interface JogadorRepository extends JpaRepository<Jogador, Long> {
     @Query(value = "SELECT COUNT(*) AS total_jogadores\n" +
             "FROM jogadores;\n", nativeQuery = true)
     List<Object[]> totalJogador();
+
+    List<Jogador> findByUsernameContainingIgnoreCase(String username);
+
 }

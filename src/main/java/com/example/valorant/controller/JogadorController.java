@@ -17,6 +17,24 @@ public class JogadorController {
     @Autowired
     private JogadorRepository repository;
 
+    @CrossOrigin(origins = "*", allowedHeaders = "*")
+    @GetMapping("/search")
+    public ResponseEntity<List<Jogador>> searchJogadores(@RequestParam String username) {
+        List<Jogador> jogadores = repository.findByUsernameContainingIgnoreCase(username);
+        return ResponseEntity.ok(jogadores);
+    }
+
+    @GetMapping("/player/{id}")
+    public ResponseEntity<JogadorResponseDTO> getPlayerDetails(@PathVariable Long id) {
+        Optional<Jogador> optionalJogador = repository.findById(id);
+        if (optionalJogador.isPresent()) {
+            JogadorResponseDTO jogadorResponseDTO = new JogadorResponseDTO(optionalJogador.get());
+            return ResponseEntity.ok(jogadorResponseDTO);
+        } else {
+            throw new EntityNotFoundException("Player not found with id: " + id);
+        }
+    }
+
     @GetMapping("/porcen-vitoria")
     public List<Map<String, Object>> findWinPercentage() {
         List<Object[]> results = repository.findWinPercentage();
