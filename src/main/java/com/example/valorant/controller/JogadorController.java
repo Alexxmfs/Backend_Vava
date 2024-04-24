@@ -1,5 +1,6 @@
 package com.example.valorant.controller;
 
+import ch.qos.logback.core.model.Model;
 import com.example.valorant.jogador.*;
 import jakarta.persistence.EntityNotFoundException;
 import jakarta.transaction.Transactional;
