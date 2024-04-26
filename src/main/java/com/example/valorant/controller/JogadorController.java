@@ -1,6 +1,5 @@
 package com.example.valorant.controller;
 
-import ch.qos.logback.core.model.Model;
 import com.example.valorant.jogador.*;
 import jakarta.persistence.EntityNotFoundException;
 import jakarta.transaction.Transactional;
@@ -101,11 +100,20 @@ public class JogadorController {
 
     @CrossOrigin(origins = "*", allowedHeaders = "*")
     @PostMapping("criar-jogador")
-    public void saveJogador(@RequestBody JogadorRequestDTO data){
-        Jogador jogadorData = new Jogador(data);
-        repository.save(jogadorData);
+    public void saveJogador(@RequestBody JogadorRequestDTO data) {
+        List<Object[]> existingPlayer = repository.jogadorExiste(data.username(), data.tag());
+        Object[] rset = existingPlayer.get(0);
+        boolean pExists = (boolean) rset[0];
+
+        if (pExists == true) {
+            repository.updateJogador(data.playtime(), data.matches(), data.rating(), data.level(), data.loses(), data.damage_round(), data.headshot(), data.win(), data.wins(), data.kills(), data.deaths(), data.assists(), data.kad_ratio(), data.kills_round(), data.clutches(), data.top_agents_1(), data.top_hours_agent_1(), data.top_matches_agent_1(), data.top_win_agent_1(), data.top_kd_agent_1(), data.top_weapon_1(), data.top_weapon_headshot_1(), data.top_weapon_2(), data.top_weapon_headshot_2(), data.top_maps_1(), data.top_porcentagem_map_win_1(), data.username(), data.tag());
+        } else {
+            Jogador jogadorData = new Jogador(data);
+            repository.save(jogadorData);
+        }
         return;
     }
+    
     
     @CrossOrigin(origins = "*", allowedHeaders = "*")
     @GetMapping("/{id}")
@@ -169,7 +177,7 @@ public class JogadorController {
 
     @DeleteMapping("/{id}")
     @Transactional
-    public ResponseEntity deleteJogador(@PathVariable Long id){
+    public ResponseEntity<Void> deleteJogador(@PathVariable Long id){
         Optional<Jogador> optionalJogador = repository.findById(id);
         if(optionalJogador.isPresent()){
             Jogador jogador = optionalJogador.get();
