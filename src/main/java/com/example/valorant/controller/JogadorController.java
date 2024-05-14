@@ -106,7 +106,7 @@ public class JogadorController {
         boolean pExists = (boolean) rset[0];
 
         if (pExists == true) {
-            repository.updateJogador(data.playtime(), data.matches(), data.rating(), data.level(), data.loses(), data.damage_round(), data.headshot(), data.win(), data.wins(), data.kills(), data.deaths(), data.assists(), data.kad_ratio(), data.kills_round(), data.clutches(), data.top_agents_1(), data.top_hours_agent_1(), data.top_matches_agent_1(), data.top_win_agent_1(), data.top_kd_agent_1(), data.top_weapon_1(), data.top_weapon_headshot_1(), data.top_weapon_2(), data.top_weapon_headshot_2(), data.top_maps_1(), data.top_porcentagem_map_win_1(), data.username(), data.tag());
+            repository.updateJogador(data.playtime(), data.matches(), data.rating(), data.level(), data.loses(), data.damage_round(), data.headshot(), data.win(), data.wins(), data.kills(), data.deaths(), data.assists(), data.kad_ratio(), data.kills_round(), data.clutches(), data.top_agents_1(), data.top_agents_2(), data.top_agents_3(), data.top_hours_agent_1(), data.top_hours_agent_2(), data.top_hours_agent_3(), data.top_matches_agent_1(), data.top_matches_agent_2(), data.top_matches_agent_3(), data.top_win_agent_1(), data.top_win_agent_2(), data.top_win_agent_3(), data.top_kd_agent_1(), data.top_kd_agent_2(), data.top_kd_agent_3(), data.top_weapon_1(), data.top_weapon_headshot_1(), data.top_weapon_2(), data.top_weapon_headshot_2(), data.top_weapon_3(), data.top_weapon_headshot_3(), data.top_maps_1(), data.top_maps_2(), data.top_maps_3(), data.top_maps_4(), data.top_maps_5(), data.top_porcentagem_map_win_1(), data.top_porcentagem_map_win_2(), data.top_porcentagem_map_win_3(), data.top_porcentagem_map_win_4(), data.top_porcentagem_map_win_5(), data.username(), data.tag());
         } else {
             Jogador jogadorData = new Jogador(data);
             repository.save(jogadorData);
@@ -158,16 +158,36 @@ public class JogadorController {
             jogador.setKills_round(data.kills_round());
             jogador.setClutches(data.clutches());
             jogador.setTop_agents_1(data.top_agents_1());
+            jogador.setTop_agents_2(data.top_agents_2());
+            jogador.setTop_agents_3(data.top_agents_3());
             jogador.setTop_hours_agent_1(data.top_hours_agent_1());
+            jogador.setTop_hours_agent_2(data.top_hours_agent_2());
+            jogador.setTop_hours_agent_3(data.top_hours_agent_3());
             jogador.setTop_matches_agent_1(data.top_matches_agent_1());
+            jogador.setTop_matches_agent_2(data.top_matches_agent_2());
+            jogador.setTop_matches_agent_3(data.top_matches_agent_3());
             jogador.setTop_win_agent_1(data.top_win_agent_1());
+            jogador.setTop_win_agent_2(data.top_win_agent_2());
+            jogador.setTop_win_agent_3(data.top_win_agent_3());
             jogador.setTop_kd_agent_1(data.top_kd_agent_1());
+            jogador.setTop_kd_agent_2(data.top_kd_agent_2());
+            jogador.setTop_kd_agent_3(data.top_kd_agent_3());
             jogador.setTop_weapon_1(data.top_weapon_1());
             jogador.setTop_weapon_headshot_1(data.top_weapon_headshot_1());
             jogador.setTop_weapon_2(data.top_weapon_2());
             jogador.setTop_weapon_headshot_2(data.top_weapon_headshot_2());
+            jogador.setTop_weapon_3(data.top_weapon_3());
+            jogador.setTop_weapon_headshot_3(data.top_weapon_headshot_3());
             jogador.setTop_maps_1(data.top_maps_1());
+            jogador.setTop_maps_2(data.top_maps_2());
+            jogador.setTop_maps_3(data.top_maps_3());
+            jogador.setTop_maps_4(data.top_maps_4());
+            jogador.setTop_maps_5(data.top_maps_5());
             jogador.setTop_porcentagem_map_win_1(data.top_porcentagem_map_win_1());
+            jogador.setTop_porcentagem_map_win_2(data.top_porcentagem_map_win_2());
+            jogador.setTop_porcentagem_map_win_3(data.top_porcentagem_map_win_3());
+            jogador.setTop_porcentagem_map_win_4(data.top_porcentagem_map_win_4());
+            jogador.setTop_porcentagem_map_win_5(data.top_porcentagem_map_win_5());
             repository.save(jogador);
             return ResponseEntity.ok().build();
         } else {

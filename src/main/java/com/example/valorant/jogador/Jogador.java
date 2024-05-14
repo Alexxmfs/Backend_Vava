@@ -33,16 +33,36 @@ public class Jogador {
     private String kills_round;
     private String clutches;
     private String top_agents_1;
+    private String top_agents_2;
+    private String top_agents_3;
     private String top_hours_agent_1;
+    private String top_hours_agent_2;
+    private String top_hours_agent_3;
     private String top_matches_agent_1;
+    private String top_matches_agent_2;
+    private String top_matches_agent_3;
     private String top_win_agent_1;
+    private String top_win_agent_2;
+    private String top_win_agent_3;
     private String top_kd_agent_1;
+    private String top_kd_agent_2;
+    private String top_kd_agent_3;
     private String top_weapon_1;
     private String top_weapon_headshot_1;
     private String top_weapon_2;
     private String top_weapon_headshot_2;
+    private String top_weapon_3;
+    private String top_weapon_headshot_3;
     private String top_maps_1;
+    private String top_maps_2;
+    private String top_maps_3;
+    private String top_maps_4;
+    private String top_maps_5;
     private String top_porcentagem_map_win_1;
+    private String top_porcentagem_map_win_2;
+    private String top_porcentagem_map_win_3;
+    private String top_porcentagem_map_win_4;
+    private String top_porcentagem_map_win_5;
 
     public Jogador(JogadorRequestDTO data){
         this.username = data.username();
@@ -63,16 +83,36 @@ public class Jogador {
         this.kills_round = data.kills_round();
         this.clutches = data.clutches();
         this.top_agents_1 = data.top_agents_1();
+        this.top_agents_2 = data.top_agents_2();
+        this.top_agents_3 = data.top_agents_3();
         this.top_hours_agent_1 = data.top_hours_agent_1();
+        this.top_hours_agent_2 = data.top_hours_agent_2();
+        this.top_hours_agent_3 = data.top_hours_agent_3();
         this.top_matches_agent_1 = data.top_matches_agent_1();
+        this.top_matches_agent_2 = data.top_matches_agent_2();
+        this.top_matches_agent_3 = data.top_matches_agent_3();
         this.top_win_agent_1 = data.top_win_agent_1();
+        this.top_win_agent_2 = data.top_win_agent_2();
+        this.top_win_agent_3 = data.top_win_agent_3();
         this.top_kd_agent_1 = data.top_kd_agent_1();
+        this.top_kd_agent_2 = data.top_kd_agent_2();
+        this.top_kd_agent_3 = data.top_kd_agent_3();
         this.top_weapon_1 = data.top_weapon_1();
         this.top_weapon_headshot_1 = data.top_weapon_headshot_1();
         this.top_weapon_2 = data.top_weapon_2();
         this.top_weapon_headshot_2 = data.top_weapon_headshot_2();
+        this.top_weapon_3 = data.top_weapon_3();
+        this.top_weapon_headshot_3 = data.top_weapon_headshot_3();
         this.top_maps_1 = data.top_maps_1();
+        this.top_maps_2 = data.top_maps_2();
+        this.top_maps_3 = data.top_maps_3();
+        this.top_maps_4 = data.top_maps_4();
+        this.top_maps_5 = data.top_maps_5();
         this.top_porcentagem_map_win_1 = data.top_porcentagem_map_win_1();
+        this.top_porcentagem_map_win_2 = data.top_porcentagem_map_win_2();
+        this.top_porcentagem_map_win_3 = data.top_porcentagem_map_win_3();
+        this.top_porcentagem_map_win_4 = data.top_porcentagem_map_win_4();
+        this.top_porcentagem_map_win_5 = data.top_porcentagem_map_win_5();
     }
 
     public void setUsername(String username) {this.username = username;}
@@ -111,13 +151,33 @@ public class Jogador {
 
     public void setTop_agents_1(String top_agents_1) {this.top_agents_1 = top_agents_1;}
 
+    public void setTop_agents_2(String top_agents_2) {this.top_agents_2 = top_agents_2;}
+
+    public void setTop_agents_3(String top_agents_3) {this.top_agents_3 = top_agents_3;}
+
     public void setTop_hours_agent_1(String top_hours_agent_1) {this.top_hours_agent_1 = top_hours_agent_1;}
+
+    public void setTop_hours_agent_2(String top_hours_agent_2) {this.top_hours_agent_2 = top_hours_agent_2;}
+
+    public void setTop_hours_agent_3(String top_hours_agent_3) {this.top_hours_agent_3 = top_hours_agent_3;}
 
     public void setTop_matches_agent_1(String top_matches_agent_1) {this.top_matches_agent_1 = top_matches_agent_1;}
 
+    public void setTop_matches_agent_2(String top_matches_agent_2) {this.top_matches_agent_2 = top_matches_agent_2;}
+
+    public void setTop_matches_agent_3(String top_matches_agent_3) {this.top_matches_agent_3 = top_matches_agent_3;}
+
     public void setTop_win_agent_1(String top_win_agent_1) {this.top_win_agent_1 = top_win_agent_1;}
 
+    public void setTop_win_agent_2(String top_win_agent_2) {this.top_win_agent_2 = top_win_agent_2;}
+
+    public void setTop_win_agent_3(String top_win_agent_3) {this.top_win_agent_3 = top_win_agent_3;}
+
     public void setTop_kd_agent_1(String top_kd_agent_1) {this.top_kd_agent_1 = top_kd_agent_1;}
+
+    public void setTop_kd_agent_2(String top_kd_agent_2) {this.top_kd_agent_2 = top_kd_agent_2;}
+
+    public void setTop_kd_agent_3(String top_kd_agent_3) {this.top_kd_agent_3 = top_kd_agent_3;}
 
     public void setTop_weapon_1(String top_weapon_1) {this.top_weapon_1 = top_weapon_1;}
 
@@ -127,8 +187,28 @@ public class Jogador {
 
     public void setTop_weapon_headshot_2(String top_weapon_headshot_2) {this.top_weapon_headshot_2 = top_weapon_headshot_2;}
 
+    public void setTop_weapon_3(String top_weapon_3) {this.top_weapon_3 = top_weapon_3;}
+
+    public void setTop_weapon_headshot_3(String top_weapon_headshot_3) {this.top_weapon_headshot_3 = top_weapon_headshot_3;}
+
     public void setTop_maps_1(String top_maps_1) {this.top_maps_1 = top_maps_1;}
 
+    public void setTop_maps_2(String top_maps_2) {this.top_maps_2 = top_maps_2;}
+
+    public void setTop_maps_3(String top_maps_3) {this.top_maps_3 = top_maps_3;}
+
+    public void setTop_maps_4(String top_maps_4) {this.top_maps_4 = top_maps_4;}
+
+    public void setTop_maps_5(String top_maps_5) {this.top_maps_5 = top_maps_5;}
+
     public void setTop_porcentagem_map_win_1(String top_porcentagem_map_win_1) {this.top_porcentagem_map_win_1 = top_porcentagem_map_win_1;}
+
+    public void setTop_porcentagem_map_win_2(String top_porcentagem_map_win_2) {this.top_porcentagem_map_win_2 = top_porcentagem_map_win_2;}
+
+    public void setTop_porcentagem_map_win_3(String top_porcentagem_map_win_3) {this.top_porcentagem_map_win_3 = top_porcentagem_map_win_3;}
+
+    public void setTop_porcentagem_map_win_4(String top_porcentagem_map_win_4) {this.top_porcentagem_map_win_4 = top_porcentagem_map_win_4;}
+
+    public void setTop_porcentagem_map_win_5(String top_porcentagem_map_win_5) {this.top_porcentagem_map_win_5 = top_porcentagem_map_win_5;}
 
 }
