@@ -15,7 +15,6 @@ public class Usuario {
     @Column(nullable = false)
     private String senha;
 
-    // Getters e Setters
     public Long getId() {
         return id;
     }

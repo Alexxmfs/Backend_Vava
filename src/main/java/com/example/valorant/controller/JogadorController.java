@@ -42,8 +42,8 @@ public class JogadorController {
 
         for (Object[] result : results) {
             Map<String, Object> playerData = new LinkedHashMap<>();
-            playerData.put("username", (String) result[0]); // Nome do jogador
-            playerData.put("matches", ((BigDecimal) result[1])); // Número de partidas
+            playerData.put("username", (String) result[0]); 
+            playerData.put("matches", ((BigDecimal) result[1])); 
             playerData.put("winPercentage", (String) result[2]);
             formattedResults.add(playerData);
         }
@@ -58,7 +58,7 @@ public class JogadorController {
 
         for (Object[] result : results) {
             Map<String, Object> playerData = new LinkedHashMap<>();
-            playerData.put("username", (String) result[0]); // Nome do jogador
+            playerData.put("username", (String) result[0]); 
             playerData.put("Top Agente 1", (String) result[1]);
             playerData.put("Top Matches Agente 1", (String) result[2]);
             playerData.put("Top Win Agente 1", (String) result[3]);
@@ -75,9 +75,9 @@ public class JogadorController {
 
         for (Object[] result : results) {
             Map<String, Object> playerData = new LinkedHashMap<>();
-            playerData.put("username", (String) result[0]); // Nome do jogador
-            playerData.put("kills", ((BigDecimal) result[1])); // Número de partidas
-            playerData.put("headshot", (String) result[2]); // Percentual de vitórias
+            playerData.put("username", (String) result[0]); 
+            playerData.put("kills", ((BigDecimal) result[1])); 
+            playerData.put("headshot", (String) result[2]); 
             formattedResults.add(playerData);
         }
 
@@ -91,7 +91,7 @@ public class JogadorController {
 
         for (Object[] result : results) {
             Map<String, Object> playerData = new LinkedHashMap<>();
-            playerData.put("Total Jogadores ", ((Number) result[0]).longValue()); // Cast to Long
+            playerData.put("Total Jogadores ", ((Number) result[0]).longValue()); 
             formattedResults.add(playerData);
         }
 
