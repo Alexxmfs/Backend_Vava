@@ -42,8 +42,8 @@ public class JogadorController {
 
         for (Object[] result : results) {
             Map<String, Object> playerData = new LinkedHashMap<>();
-            playerData.put("username", (String) result[0]); 
-            playerData.put("matches", ((BigDecimal) result[1])); 
+            playerData.put("username", (String) result[0]);
+            playerData.put("matches", ((BigDecimal) result[1]));
             playerData.put("winPercentage", (String) result[2]);
             formattedResults.add(playerData);
         }
@@ -58,7 +58,7 @@ public class JogadorController {
 
         for (Object[] result : results) {
             Map<String, Object> playerData = new LinkedHashMap<>();
-            playerData.put("username", (String) result[0]); 
+            playerData.put("username", (String) result[0]);
             playerData.put("Top Agente 1", (String) result[1]);
             playerData.put("Top Matches Agente 1", (String) result[2]);
             playerData.put("Top Win Agente 1", (String) result[3]);
@@ -75,9 +75,9 @@ public class JogadorController {
 
         for (Object[] result : results) {
             Map<String, Object> playerData = new LinkedHashMap<>();
-            playerData.put("username", (String) result[0]); 
-            playerData.put("kills", ((BigDecimal) result[1])); 
-            playerData.put("headshot", (String) result[2]); 
+            playerData.put("username", (String) result[0]);
+            playerData.put("kills", ((BigDecimal) result[1]));
+            playerData.put("headshot", (String) result[2]);
             formattedResults.add(playerData);
         }
 
@@ -91,7 +91,7 @@ public class JogadorController {
 
         for (Object[] result : results) {
             Map<String, Object> playerData = new LinkedHashMap<>();
-            playerData.put("Total Jogadores ", ((Number) result[0]).longValue()); 
+            playerData.put("Total Jogadores ", ((Number) result[0]).longValue());
             formattedResults.add(playerData);
         }
 
@@ -105,16 +105,58 @@ public class JogadorController {
         Object[] rset = existingPlayer.get(0);
         boolean pExists = (boolean) rset[0];
 
-        if (pExists == true) {
-            repository.updateJogador(data.playtime(), data.matches(), data.rating(), data.level(), data.loses(), data.damage_round(), data.headshot(), data.win(), data.wins(), data.kills(), data.deaths(), data.assists(), data.kad_ratio(), data.kills_round(), data.clutches(), data.top_agents_1(), data.top_agents_2(), data.top_agents_3(), data.top_hours_agent_1(), data.top_hours_agent_2(), data.top_hours_agent_3(), data.top_matches_agent_1(), data.top_matches_agent_2(), data.top_matches_agent_3(), data.top_win_agent_1(), data.top_win_agent_2(), data.top_win_agent_3(), data.top_kd_agent_1(), data.top_kd_agent_2(), data.top_kd_agent_3(), data.top_weapon_1(), data.top_weapon_headshot_1(), data.top_weapon_2(), data.top_weapon_headshot_2(), data.top_weapon_3(), data.top_weapon_headshot_3(), data.top_maps_1(), data.top_maps_2(), data.top_maps_3(), data.top_maps_4(), data.top_maps_5(), data.top_porcentagem_map_win_1(), data.top_porcentagem_map_win_2(), data.top_porcentagem_map_win_3(), data.top_porcentagem_map_win_4(), data.top_porcentagem_map_win_5(), data.username(), data.tag());
+        if (pExists) {
+            repository.updateJogador(
+                    data.dpR(),
+                    data.kdr(),
+                    data.headshot(),
+                    data.win(),
+                    data.wins(),
+                    data.kast(),
+                    data.dddeltaR(),
+                    data.kills(),
+                    data.deaths(),
+                    data.assists(),
+                    data.acs(),
+                    data.kadRatio(),
+                    data.killsPerRound(),
+                    data.clutch1v1s(),
+                    data.flawlessRounds(),
+                    data.currentRating(),
+                    data.peakRating(),
+                    data.playtime(),
+                    data.matches(),
+                    data.level(),
+                    data.losses(),
+                    data.topAgent1(),
+                    data.topAgent2(),
+                    data.topAgent3(),
+                    data.topHoursAgent1(),
+                    data.topHoursAgent2(),
+                    data.topHoursAgent3(),
+                    data.topMatchesAgent1(),
+                    data.topMatchesAgent2(),
+                    data.topMatchesAgent3(),
+                    data.topWinAgent1(),
+                    data.topWinAgent2(),
+                    data.topWinAgent3(),
+                    data.topKDAgent1(),
+                    data.topKDAgent2(),
+                    data.topKDAgent3(),
+                    data.topWeapon1(),
+                    data.topWeaponHeadshot1(),
+                    data.topWeapon2(),
+                    data.topWeaponHeadshot2(),
+                    data.topWeapon3(),
+                    data.topWeaponHeadshot3(),
+                    data.username(),
+                    data.tag());
         } else {
             Jogador jogadorData = new Jogador(data);
             repository.save(jogadorData);
         }
-        return;
     }
-    
-    
+
     @CrossOrigin(origins = "*", allowedHeaders = "*")
     @GetMapping("/{id}")
     public ResponseEntity<JogadorResponseDTO> getJogadorById(@PathVariable Long id) {
@@ -126,9 +168,10 @@ public class JogadorController {
             throw new EntityNotFoundException("Product not found with id: " + id);
         }
     }
+
     @CrossOrigin(origins = "*", allowedHeaders = "*")
     @GetMapping
-    public List<JogadorResponseDTO> getAll(){
+    public List<JogadorResponseDTO> getAll() {
 
         List<JogadorResponseDTO> jogadorList = repository.findAll().stream().map(JogadorResponseDTO::new).toList();
         return jogadorList;
@@ -142,52 +185,49 @@ public class JogadorController {
             Jogador jogador = optionalJogador.get();
             jogador.setUsername(data.username());
             jogador.setTag(data.tag());
-            jogador.setPlaytime(data.playtime());
-            jogador.setMatches(data.matches());
-            jogador.setRating(data.rating());
-            jogador.setLevel(data.level());
-            jogador.setLoses(data.loses());
-            jogador.setDamage_round(data.damage_round());
+            jogador.setUrl(data.url());
+            jogador.setDpR(data.dpR());
+            jogador.setKdr(data.kdr());
             jogador.setHeadshot(data.headshot());
             jogador.setWin(data.win());
             jogador.setWins(data.wins());
+            jogador.setKast(data.kast());
+            jogador.setDddeltaR(data.dddeltaR());
             jogador.setKills(data.kills());
             jogador.setDeaths(data.deaths());
             jogador.setAssists(data.assists());
-            jogador.setKad_ratio(data.kad_ratio());
-            jogador.setKills_round(data.kills_round());
-            jogador.setClutches(data.clutches());
-            jogador.setTop_agents_1(data.top_agents_1());
-            jogador.setTop_agents_2(data.top_agents_2());
-            jogador.setTop_agents_3(data.top_agents_3());
-            jogador.setTop_hours_agent_1(data.top_hours_agent_1());
-            jogador.setTop_hours_agent_2(data.top_hours_agent_2());
-            jogador.setTop_hours_agent_3(data.top_hours_agent_3());
-            jogador.setTop_matches_agent_1(data.top_matches_agent_1());
-            jogador.setTop_matches_agent_2(data.top_matches_agent_2());
-            jogador.setTop_matches_agent_3(data.top_matches_agent_3());
-            jogador.setTop_win_agent_1(data.top_win_agent_1());
-            jogador.setTop_win_agent_2(data.top_win_agent_2());
-            jogador.setTop_win_agent_3(data.top_win_agent_3());
-            jogador.setTop_kd_agent_1(data.top_kd_agent_1());
-            jogador.setTop_kd_agent_2(data.top_kd_agent_2());
-            jogador.setTop_kd_agent_3(data.top_kd_agent_3());
-            jogador.setTop_weapon_1(data.top_weapon_1());
-            jogador.setTop_weapon_headshot_1(data.top_weapon_headshot_1());
-            jogador.setTop_weapon_2(data.top_weapon_2());
-            jogador.setTop_weapon_headshot_2(data.top_weapon_headshot_2());
-            jogador.setTop_weapon_3(data.top_weapon_3());
-            jogador.setTop_weapon_headshot_3(data.top_weapon_headshot_3());
-            jogador.setTop_maps_1(data.top_maps_1());
-            jogador.setTop_maps_2(data.top_maps_2());
-            jogador.setTop_maps_3(data.top_maps_3());
-            jogador.setTop_maps_4(data.top_maps_4());
-            jogador.setTop_maps_5(data.top_maps_5());
-            jogador.setTop_porcentagem_map_win_1(data.top_porcentagem_map_win_1());
-            jogador.setTop_porcentagem_map_win_2(data.top_porcentagem_map_win_2());
-            jogador.setTop_porcentagem_map_win_3(data.top_porcentagem_map_win_3());
-            jogador.setTop_porcentagem_map_win_4(data.top_porcentagem_map_win_4());
-            jogador.setTop_porcentagem_map_win_5(data.top_porcentagem_map_win_5());
+            jogador.setAcs(data.acs());
+            jogador.setKadRatio(data.kadRatio());
+            jogador.setKillsPerRound(data.killsPerRound());
+            jogador.setClutch1v1s(data.clutch1v1s());
+            jogador.setFlawlessRounds(data.flawlessRounds());
+            jogador.setCurrentRating(data.currentRating());
+            jogador.setPeakRating(data.peakRating());
+            jogador.setPlaytime(data.playtime());
+            jogador.setMatches(data.matches());
+            jogador.setLevel(data.level());
+            jogador.setLosses(data.losses());
+            jogador.setTopAgent1(data.topAgent1());
+            jogador.setTopAgent2(data.topAgent2());
+            jogador.setTopAgent3(data.topAgent3());
+            jogador.setTopHoursAgent1(data.topHoursAgent1());
+            jogador.setTopHoursAgent2(data.topHoursAgent2());
+            jogador.setTopHoursAgent3(data.topHoursAgent3());
+            jogador.setTopMatchesAgent1(data.topMatchesAgent1());
+            jogador.setTopMatchesAgent2(data.topMatchesAgent2());
+            jogador.setTopMatchesAgent3(data.topMatchesAgent3());
+            jogador.setTopWinAgent1(data.topWinAgent1());
+            jogador.setTopWinAgent2(data.topWinAgent2());
+            jogador.setTopWinAgent3(data.topWinAgent3());
+            jogador.setTopKDAgent1(data.topKDAgent1());
+            jogador.setTopKDAgent2(data.topKDAgent2());
+            jogador.setTopKDAgent3(data.topKDAgent3());
+            jogador.setTopWeapon1(data.topWeapon1());
+            jogador.setTopWeaponHeadshot1(data.topWeaponHeadshot1());
+            jogador.setTopWeapon2(data.topWeapon2());
+            jogador.setTopWeaponHeadshot2(data.topWeaponHeadshot2());
+            jogador.setTopWeapon3(data.topWeapon3());
+            jogador.setTopWeaponHeadshot3(data.topWeaponHeadshot3());
             repository.save(jogador);
             return ResponseEntity.ok().build();
         } else {
@@ -197,9 +237,9 @@ public class JogadorController {
 
     @DeleteMapping("/{id}")
     @Transactional
-    public ResponseEntity<Void> deleteJogador(@PathVariable Long id){
+    public ResponseEntity<Void> deleteJogador(@PathVariable Long id) {
         Optional<Jogador> optionalJogador = repository.findById(id);
-        if(optionalJogador.isPresent()){
+        if (optionalJogador.isPresent()) {
             Jogador jogador = optionalJogador.get();
             repository.delete(jogador);
             return ResponseEntity.noContent().build();

@@ -1,6 +1,50 @@
-    package com.example.valorant.jogador;
+package com.example.valorant.jogador;
 
-    public record JogadorRequestDTO(Long id, String username, String tag, double playtime, double matches, String rating, String level, String loses, String damage_round, String headshot, String win, double wins, double kills, double deaths, double assists, String kad_ratio, String kills_round, String clutches, String top_agents_1, String top_agents_2, String top_agents_3, String top_hours_agent_1, String top_hours_agent_2, String top_hours_agent_3, String top_matches_agent_1, String top_matches_agent_2, String top_matches_agent_3, String top_win_agent_1, String top_win_agent_2, String top_win_agent_3, String top_kd_agent_1, String top_kd_agent_2, String top_kd_agent_3, String top_weapon_1, String top_weapon_headshot_1, String top_weapon_2, String top_weapon_headshot_2, String top_weapon_3, String top_weapon_headshot_3, String top_maps_1, String top_maps_2, String top_maps_3, String top_maps_4, String top_maps_5, String top_porcentagem_map_win_1, String top_porcentagem_map_win_2, String top_porcentagem_map_win_3, String top_porcentagem_map_win_4, String top_porcentagem_map_win_5) {
-    }
-
-
+public record JogadorRequestDTO(
+        Long id, 
+        String username, 
+        String tag, 
+        String url, 
+        String dpR, 
+        String kdr, 
+        String headshot, 
+        String win, 
+        String wins, 
+        String kast, 
+        String dddeltaR, 
+        String kills, 
+        String deaths, 
+        String assists, 
+        String acs, 
+        String kadRatio, 
+        String killsPerRound, 
+        String clutch1v1s, 
+        String flawlessRounds,
+        String currentRating, 
+        String peakRating, 
+        String playtime, 
+        String matches, 
+        String level, 
+        String losses,
+        String topAgent1, 
+        String topAgent2, 
+        String topAgent3, 
+        String topHoursAgent1, 
+        String topHoursAgent2, 
+        String topHoursAgent3, 
+        String topMatchesAgent1, 
+        String topMatchesAgent2, 
+        String topMatchesAgent3, 
+        String topWinAgent1, 
+        String topWinAgent2, 
+        String topWinAgent3, 
+        String topKDAgent1, 
+        String topKDAgent2, 
+        String topKDAgent3, 
+        String topWeapon1, 
+        String topWeaponHeadshot1, 
+        String topWeapon2, 
+        String topWeaponHeadshot2, 
+        String topWeapon3, 
+        String topWeaponHeadshot3
+) { }
