@@ -114,8 +114,22 @@ public class JogadorController {
                     data.topAgent2(), data.topAgent3(), data.topHoursAgent1(), data.topHoursAgent2(),
                     data.topHoursAgent3(), data.topMatchesAgent1(), data.topMatchesAgent2(), data.topMatchesAgent3(),
                     data.topWinAgent1(), data.topWinAgent2(), data.topWinAgent3(), data.topKDAgent1(),
-                    data.topKDAgent2(), data.topKDAgent3(), data.topWeapon1(), data.topWeaponHeadshot1(),
-                    data.topWeapon2(), data.topWeaponHeadshot2(), data.topWeapon3(), data.topWeaponHeadshot3(),
+                    data.topKDAgent2(), data.topKDAgent3(), 
+                    data.topWeapon1(), 
+                    data.topWeaponHeadshot1(),
+                    data.topWeaponBodyshot1(),
+                    data.topWeaponLegshot1(),
+                    data.topWeaponKills1(),
+                    data.topWeapon2(), 
+                    data.topWeaponHeadshot2(), 
+                    data.topWeaponBodyshot2(),
+                    data.topWeaponLegshot2(),
+                    data.topWeaponKills2(),
+                    data.topWeapon3(), 
+                    data.topWeaponHeadshot3(),
+                    data.topWeaponBodyshot3(),
+                    data.topWeaponLegshot3(),
+                    data.topWeaponKills3(),
                     data.topMap1(),
                     data.topMapWinrate1(),
                     data.topMapWins1(),
@@ -212,10 +226,40 @@ public class JogadorController {
             jogador.setTopKDAgent3(data.topKDAgent3());
             jogador.setTopWeapon1(data.topWeapon1());
             jogador.setTopWeaponHeadshot1(data.topWeaponHeadshot1());
+            jogador.setTopWeaponBodyshot1(data.topWeaponBodyshot1());
+            jogador.setTopWeaponLegshot1(data.topWeaponLegshot1());
+            jogador.setTopWeaponKills1(data.topWeaponKills1());
             jogador.setTopWeapon2(data.topWeapon2());
             jogador.setTopWeaponHeadshot2(data.topWeaponHeadshot2());
+            jogador.setTopWeaponBodyshot2(data.topWeaponBodyshot2());
+            jogador.setTopWeaponLegshot2(data.topWeaponLegshot2());
+            jogador.setTopWeaponKills2(data.topWeaponKills2());
             jogador.setTopWeapon3(data.topWeapon3());
             jogador.setTopWeaponHeadshot3(data.topWeaponHeadshot3());
+            jogador.setTopWeaponBodyshot3(data.topWeaponBodyshot3());
+            jogador.setTopWeaponLegshot3(data.topWeaponLegshot3());
+            jogador.setTopWeaponKills3(data.topWeaponKills3());
+            jogador.setTopMap1(data.topMap1());
+            jogador.setTopMapWinrate1(data.topMapWinrate1());
+            jogador.setTopMapWins1(data.topMapWins1());
+            jogador.setTopMapLosses1(data.topMapLosses1());
+            jogador.setTopMap2(data.topMap2());
+            jogador.setTopMapWinrate2(data.topMapWinrate2());
+            jogador.setTopMapWins2(data.topMapWins2());
+            jogador.setTopMapLosses2(data.topMapLosses2());
+            jogador.setTopMap3(data.topMap3());
+            jogador.setTopMapWinrate3(data.topMapWinrate3());
+            jogador.setTopMapWins3(data.topMapWins3());
+            jogador.setTopMapLosses3(data.topMapLosses3());
+            jogador.setTopMap4(data.topMap4());
+            jogador.setTopMapWinrate4(data.topMapWinrate4());
+            jogador.setTopMapWins4(data.topMapWins4());
+            jogador.setTopMapLosses4(data.topMapLosses4());
+            jogador.setTopMap5(data.topMap5());
+            jogador.setTopMapWinrate5(data.topMapWinrate5());
+            jogador.setTopMapWins5(data.topMapWins5());
+            jogador.setTopMapLosses5(data.topMapLosses5());
+            jogador.setViews(data.views());
             repository.save(jogador);
             return ResponseEntity.ok().build();
         } else {
