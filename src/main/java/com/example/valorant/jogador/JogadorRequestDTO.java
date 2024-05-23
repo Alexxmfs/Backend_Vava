@@ -96,5 +96,6 @@ public record JogadorRequestDTO(
         double topMapWinrate10,
         double topMapWins10,
         double topMapLosses10,
-        double views
+        double views,
+        String rank
 ) { }

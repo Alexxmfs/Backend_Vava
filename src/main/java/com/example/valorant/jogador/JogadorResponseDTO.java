@@ -96,7 +96,8 @@ public record JogadorResponseDTO(
     double topMapWinrate10,
     double topMapWins10,
     double topMapLosses10,
-    double views
+    double views,
+    String rank
 ) {
     public JogadorResponseDTO(Jogador jogador) {
         this(
@@ -195,7 +196,8 @@ public record JogadorResponseDTO(
             jogador.getTopMapWinrate10(),
             jogador.getTopMapWins10(),
             jogador.getTopMapLosses10(),
-            jogador.getViews()
+            jogador.getViews(),
+            jogador.getRank()
         );
     }
 }

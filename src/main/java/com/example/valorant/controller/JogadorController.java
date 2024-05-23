@@ -171,6 +171,7 @@ public class JogadorController {
                     data.topMapWins10(),
                     data.topMapLosses10(),
                     data.views(),
+                    data.rank(),
                     data.username(),
                     data.tag());
         } else {
@@ -300,6 +301,7 @@ public class JogadorController {
             jogador.setTopMapWins10(data.topMapWins10());
             jogador.setTopMapLosses10(data.topMapLosses10());
             jogador.setViews(data.views());
+            jogador.setRank(data.rank());
             repository.save(jogador);
             return ResponseEntity.ok().build();
         } else {

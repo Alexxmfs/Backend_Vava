@@ -116,6 +116,7 @@ public class Jogador {
     private double topMapWins10;
     private double topMapLosses10;
     private double views;
+    private String rank;
 
     // Construtor que recebe JogadorRequestDTO
     public Jogador(JogadorRequestDTO data) {
@@ -214,6 +215,7 @@ public class Jogador {
         this.topMapWins10 = data.topMapWins10();
         this.topMapLosses10 = data.topMapLosses10();
         this.views = data.views();
+        this.rank = data.rank();
     }
 }
 

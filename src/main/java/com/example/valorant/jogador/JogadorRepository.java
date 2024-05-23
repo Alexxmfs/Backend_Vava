@@ -115,7 +115,8 @@ public interface JogadorRepository extends JpaRepository<Jogador, Long> {
             Top_Map_Winrate10 = :topMapWinrate10,
             Top_Map_Wins10 = :topMapWins10,
             Top_Map_Losses10 = :topMapLosses10,
-            Views = :views
+            Views = :views,
+            rank = :rank
         WHERE username = :username AND tag = :tag
         """, nativeQuery = true)
     void updateJogador(
@@ -212,6 +213,7 @@ public interface JogadorRepository extends JpaRepository<Jogador, Long> {
             @Param("topMapWins10") double topMapWins10,
             @Param("topMapLosses5") double topMapLosses10,
             @Param("views") double views,
+            @Param("rank") String rank,
             @Param("username") String username,
             @Param("tag") String tag);
 
