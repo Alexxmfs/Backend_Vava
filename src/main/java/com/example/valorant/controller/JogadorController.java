@@ -150,6 +150,26 @@ public class JogadorController {
                     data.topMapWinrate5(),
                     data.topMapWins5(),
                     data.topMapLosses5(),
+                    data.topMap6(),
+                    data.topMapWinrate6(),
+                    data.topMapWins6(),
+                    data.topMapLosses6(),
+                    data.topMap7(),
+                    data.topMapWinrate7(),
+                    data.topMapWins7(),
+                    data.topMapLosses7(),
+                    data.topMap8(),
+                    data.topMapWinrate8(),
+                    data.topMapWins8(),
+                    data.topMapLosses8(),
+                    data.topMap9(),
+                    data.topMapWinrate9(),
+                    data.topMapWins9(),
+                    data.topMapLosses9(),
+                    data.topMap10(),
+                    data.topMapWinrate10(),
+                    data.topMapWins10(),
+                    data.topMapLosses10(),
                     data.views(),
                     data.username(),
                     data.tag());
@@ -259,6 +279,26 @@ public class JogadorController {
             jogador.setTopMapWinrate5(data.topMapWinrate5());
             jogador.setTopMapWins5(data.topMapWins5());
             jogador.setTopMapLosses5(data.topMapLosses5());
+            jogador.setTopMap6(data.topMap6());
+            jogador.setTopMapWinrate6(data.topMapWinrate6());
+            jogador.setTopMapWins6(data.topMapWins6());
+            jogador.setTopMapLosses6(data.topMapLosses6());
+            jogador.setTopMap7(data.topMap7());
+            jogador.setTopMapWinrate7(data.topMapWinrate7());
+            jogador.setTopMapWins7(data.topMapWins7());
+            jogador.setTopMapLosses7(data.topMapLosses7());
+            jogador.setTopMap8(data.topMap8());
+            jogador.setTopMapWinrate8(data.topMapWinrate8());
+            jogador.setTopMapWins8(data.topMapWins8());
+            jogador.setTopMapLosses8(data.topMapLosses8());
+            jogador.setTopMap9(data.topMap9());
+            jogador.setTopMapWinrate9(data.topMapWinrate9());
+            jogador.setTopMapWins9(data.topMapWins9());
+            jogador.setTopMapLosses9(data.topMapLosses9());
+            jogador.setTopMap10(data.topMap10());
+            jogador.setTopMapWinrate10(data.topMapWinrate10());
+            jogador.setTopMapWins10(data.topMapWins10());
+            jogador.setTopMapLosses10(data.topMapLosses10());
             jogador.setViews(data.views());
             repository.save(jogador);
             return ResponseEntity.ok().build();

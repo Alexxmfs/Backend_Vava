@@ -90,6 +90,31 @@ public class Jogador {
     private double topMapWinrate5;
     private double topMapWins5;
     private double topMapLosses5;
+
+    private String topMap6;
+    private double topMapWinrate6;
+    private double topMapWins6;
+    private double topMapLosses6;
+
+    private String topMap7;
+    private double topMapWinrate7;
+    private double topMapWins7;
+    private double topMapLosses7;
+
+    private String topMap8;
+    private double topMapWinrate8;
+    private double topMapWins8;
+    private double topMapLosses8;
+
+    private String topMap9;
+    private double topMapWinrate9;
+    private double topMapWins9;
+    private double topMapLosses9;
+
+    private String topMap10;
+    private double topMapWinrate10;
+    private double topMapWins10;
+    private double topMapLosses10;
     private double views;
 
     // Construtor que recebe JogadorRequestDTO
@@ -168,6 +193,26 @@ public class Jogador {
         this.topMapWinrate5 = data.topMapWinrate5();
         this.topMapWins5 = data.topMapWins5();
         this.topMapLosses5 = data.topMapLosses5();
+        this.topMap6 = data.topMap6();
+        this.topMapWinrate6 = data.topMapWinrate6();
+        this.topMapWins6 = data.topMapWins6();
+        this.topMapLosses6 = data.topMapLosses6();
+        this.topMap7 = data.topMap7();
+        this.topMapWinrate7 = data.topMapWinrate7();
+        this.topMapWins7 = data.topMapWins7();
+        this.topMapLosses7 = data.topMapLosses7();
+        this.topMap8 = data.topMap8();
+        this.topMapWinrate8 = data.topMapWinrate8();
+        this.topMapWins8 = data.topMapWins8();
+        this.topMapLosses8 = data.topMapLosses8();
+        this.topMap9 = data.topMap9();
+        this.topMapWinrate9 = data.topMapWinrate9();
+        this.topMapWins9 = data.topMapWins9();
+        this.topMapLosses9 = data.topMapLosses9();
+        this.topMap10 = data.topMap10();
+        this.topMapWinrate10 = data.topMapWinrate10();
+        this.topMapWins10 = data.topMapWins10();
+        this.topMapLosses10 = data.topMapLosses10();
         this.views = data.views();
     }
 }
