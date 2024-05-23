@@ -46,7 +46,28 @@ public record JogadorResponseDTO(
     String topWeapon2, 
     String topWeaponHeadshot2, 
     String topWeapon3, 
-    String topWeaponHeadshot3
+    String topWeaponHeadshot3,
+    String topMap1,
+    String topMapWinrate1,
+    String topMapWins1,
+    String topMapLosses1,
+    String topMap2,
+    String topMapWinrate2,
+    String topMapWins2,
+    String topMapLosses2,
+    String topMap3,
+    String topMapWinrate3,
+    String topMapWins3,
+    String topMapLosses3,
+    String topMap4,
+    String topMapWinrate4,
+    String topMapWins4,
+    String topMapLosses4,
+    String topMap5,
+    String topMapWinrate5,
+    String topMapWins5,
+    String topMapLosses5,
+    String views
 ) {
     public JogadorResponseDTO(Jogador jogador) {
         this(
@@ -95,7 +116,28 @@ public record JogadorResponseDTO(
             jogador.getTopWeapon2(), 
             jogador.getTopWeaponHeadshot2(), 
             jogador.getTopWeapon3(), 
-            jogador.getTopWeaponHeadshot3()
+            jogador.getTopWeaponHeadshot3(),
+            jogador.getTopMap1(),
+            jogador.getTopMapWinrate1(),
+            jogador.getTopMapWins1(),
+            jogador.getTopMapLosses1(),
+            jogador.getTopMap2(),
+            jogador.getTopMapWinrate2(),
+            jogador.getTopMapWins2(),
+            jogador.getTopMapLosses2(),
+            jogador.getTopMap3(),
+            jogador.getTopMapWinrate3(),
+            jogador.getTopMapWins3(),
+            jogador.getTopMapLosses3(),
+            jogador.getTopMap4(),
+            jogador.getTopMapWinrate4(),
+            jogador.getTopMapWins4(),
+            jogador.getTopMapLosses4(),
+            jogador.getTopMap5(),
+            jogador.getTopMapWinrate5(),
+            jogador.getTopMapWins5(),
+            jogador.getTopMapLosses5(),
+            jogador.getViews()
         );
     }
 }

@@ -61,6 +61,28 @@ public class Jogador {
     private String topWeapon3; 
     private String topWeaponHeadshot3;
 
+    private String topMap1;
+    private String topMapWinrate1;
+    private String topMapWins1;
+    private String topMapLosses1;
+    private String topMap2;
+    private String topMapWinrate2;
+    private String topMapWins2;
+    private String topMapLosses2;
+    private String topMap3;
+    private String topMapWinrate3;
+    private String topMapWins3;
+    private String topMapLosses3;
+    private String topMap4;
+    private String topMapWinrate4;
+    private String topMapWins4;
+    private String topMapLosses4;
+    private String topMap5;
+    private String topMapWinrate5;
+    private String topMapWins5;
+    private String topMapLosses5;
+    private String views;
+
     // Construtor que recebe JogadorRequestDTO
     public Jogador(JogadorRequestDTO data) {
         this.username = data.username();
@@ -108,6 +130,27 @@ public class Jogador {
         this.topWeaponHeadshot2 = data.topWeaponHeadshot2();
         this.topWeapon3 = data.topWeapon3();
         this.topWeaponHeadshot3 = data.topWeaponHeadshot3();
+        this.topMap1 = data.topMap1();
+        this.topMapWinrate1 = data.topMapWinrate1();
+        this.topMapWins1 = data.topMapWins1();
+        this.topMapLosses1 = data.topMapLosses1();
+        this.topMap2 = data.topMap2();
+        this.topMapWinrate2 = data.topMapWinrate2();
+        this.topMapWins2 = data.topMapWins2();
+        this.topMapLosses2 = data.topMapLosses2();
+        this.topMap3 = data.topMap3();
+        this.topMapWinrate3 = data.topMapWinrate3();
+        this.topMapWins3 = data.topMapWins3();
+        this.topMapLosses3 = data.topMapLosses3();
+        this.topMap4 = data.topMap4();
+        this.topMapWinrate4 = data.topMapWinrate4();
+        this.topMapWins4 = data.topMapWins4();
+        this.topMapLosses4 = data.topMapLosses4();
+        this.topMap5 = data.topMap5();
+        this.topMapWinrate5 = data.topMapWinrate5();
+        this.topMapWins5 = data.topMapWins5();
+        this.topMapLosses5 = data.topMapLosses5();
+        this.views = data.views();
     }
 }
 

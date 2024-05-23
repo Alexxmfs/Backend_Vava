@@ -4,6 +4,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
@@ -18,6 +19,7 @@ public interface JogadorRepository extends JpaRepository<Jogador, Long> {
     @Query(value = "SELECT username, matches, win FROM jogadores", nativeQuery = true)
     List<Object[]> findWinPercentage();
 
+    @Transactional
     @Modifying
     @Query(value = """
         UPDATE jogadores SET
@@ -63,7 +65,28 @@ public interface JogadorRepository extends JpaRepository<Jogador, Long> {
             top_weapon2 = :topWeapon2,
             top_weapon_headshot2 = :topWeaponHeadshot2,
             top_weapon3 = :topWeapon3,
-            top_weapon_headshot3 = :topWeaponHeadshot3
+            top_weapon_headshot3 = :topWeaponHeadshot3,
+            TopMap1 = :topMap1,
+            TopMapWinrate1 = :topMapWinrate1,
+            TopMapWins1 = :topMapWins1,
+            TopMapLosses1 = :topMapLosses1,
+            TopMap2 = :topMap2,
+            TopMapWinrate2 = :topMapWinrate2,
+            TopMapWins2 = :topMapWins2,
+            TopMapLosses2 = :topMapLosses2,
+            TopMap3 = :topMap3,
+            TopMapWinrate3 = :topMapWinrate3,
+            TopMapWins3 = :topMapWins3,
+            TopMapLosses3 = :topMapLosses3,
+            TopMap4 = :topMap4,
+            TopMapWinrate4 = :topMapWinrate4,
+            TopMapWins4 = :topMapWins4,
+            TopMapLosses4 = :topMapLosses4,
+            TopMap5 = :topMap5,
+            TopMapWinrate5 = :topMapWinrate5,
+            TopMapWins5 = :topMapWins5,
+            TopMapLosses5 = :topMapLosses5,
+            Views = :views
         WHERE username = :username AND tag = :tag
         """, nativeQuery = true)
     void updateJogador(
@@ -110,9 +133,30 @@ public interface JogadorRepository extends JpaRepository<Jogador, Long> {
             @Param("topWeaponHeadshot2") String topWeaponHeadshot2, 
             @Param("topWeapon3") String topWeapon3, 
             @Param("topWeaponHeadshot3") String topWeaponHeadshot3,
+            @Param("topMap1") String topMap1,
+            @Param("topMapWinrate1") String topMapWinrate1,
+            @Param("topMapWins1") String topMapWins1,
+            @Param("topMapLosses1") String topMapLosses1,
+            @Param("topMap2") String topMap2,
+            @Param("topMapWinrate2") String topMapWinrate2,
+            @Param("topMapWins2") String topMapWins2,
+            @Param("topMapLosses2") String topMapLosses2,
+            @Param("topMap3") String topMap3,
+            @Param("topMapWinrate3") String topMapWinrate3,
+            @Param("topMapWins3") String topMapWins3,
+            @Param("topMapLosses3") String topMapLosses3,
+            @Param("topMap4") String topMap4,
+            @Param("topMapWinrate4") String topMapWinrate4,
+            @Param("topMapWins4") String topMapWins4,
+            @Param("topMapLosses4") String topMapLosses4,
+            @Param("topMap5") String topMap5,
+            @Param("topMapWinrate5") String topMapWinrate5,
+            @Param("topMapWins5") String topMapWins5,
+            @Param("topMapLosses5") String topMapLosses5,
+            @Param("views") String views,
             @Param("username") String username,
             @Param("tag") String tag);
-                
+
     @Query(value = "SELECT username, top_agents_1, top_matches_agent_1, top_win_agent_1 FROM JOGADORES", nativeQuery = true)
     List<Object[]> porcenVitAgent();
 
